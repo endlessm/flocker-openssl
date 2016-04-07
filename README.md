@@ -19,7 +19,7 @@ https://docs.clusterhq.com/en/latest/flocker-standalone/configuring-authenticati
 
 You can view help message by
 ```
-$ ./flockeropenssl/generate_flocker_certs.sh -h
+$ ./flocker-openssl/generate_flocker_certs.sh -h
 Usage: $0 (-i=<control_ip> | -d=<control_fqdn>) [-f=openssl_conf] -c=<cluster_name> -n=<node>[,<node> ... ]
 
 
@@ -43,10 +43,10 @@ Usage: $0 (-i=<control_ip> | -d=<control_fqdn>) [-f=openssl_conf] -c=<cluster_na
 Examples:
 
 ```
-./flockeropenssl/generate_flocker_certs.sh -d=www.foobar.com -k=1024 -c=staging-1 -n=one,two
+./flocker-openssl/generate_flocker_certs.sh -d=www.foobar.com -k=1024 -c=staging-1 -n=one,two
 ```
 ```
-./flockeropenssl/generate_flocker_certs.sh -d="ec2-52-91-11-106.compute-1.amazonaws.com" -n="ec2-52-91-11-106.compute-1.amazonaws.com,node2,node3" -f=/etc/flocker/ssl/flockeropenssl/openssl.cnf
+./flocker-openssl/generate_flocker_certs.sh -d="ec2-52-91-11-106.compute-1.amazonaws.com" -n="ec2-52-91-11-106.compute-1.amazonaws.com,node2,node3" -f=/etc/flocker/ssl/flockeropenssl/openssl.cnf
 ```
 
 All relevant certificates can be found in `clusters/<cluster_name>`
@@ -160,6 +160,4 @@ sh create-node.sh
 
 ### Contributions
 
-Thanks to Brendan Cox for the heavy lifting. The rest of this was from guidance through:
-- https://jamielinux.com/docs/openssl-certificate-authority/index.html
-- and combined with the implementation in flocker/flocker/ca/_ca.py
+See AUTHORS.md
