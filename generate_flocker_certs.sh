@@ -256,7 +256,7 @@ generate_and_sign_node_certs() {
   echo "- Will create ${#nodes[@]} node keypair(s)"
 
   local cluster_uuid=$(openssl x509 -noout -subject -in $ca_keypair.crt \
-                       | sed -e 's/.*\/OU=\(.*\)[\/]*.*/\1/')
+                       | sed -e 's/.*[=\ \/]OU\ *=\ *\+\(.*\)[\/]*.*/\1/')
   echo "- Using Cluster UUID: $cluster_uuid"
 
   for node_hostname in ${nodes[@]}; do
